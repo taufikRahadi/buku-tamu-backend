@@ -8,6 +8,9 @@ require("dotenv").config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.get("", (req, res, next) => {
+  res.send("This is API is running")
+})
 // POST CREATE GUEST BOOK DATA
 app.post("/guest", async (req, res, next) => {
   const { name, text } = req.body
